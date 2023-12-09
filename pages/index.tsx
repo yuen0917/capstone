@@ -75,6 +75,15 @@ function DemoMeetingTab({ label }: { label: string }) {
   );
 }
 
+function AnonymouslyTab({ label }: { label: string }) {
+  const router = useRouter();
+  return (
+    <div className={styles.tabContent}>
+      <p>You need to login in to start a streaming</p>
+    </div>
+  );
+}
+
 function CustomConnectionTab({ label }: { label: string }) {
   const router = useRouter();
   // const [inputString, setInputString] = useState('');
@@ -354,10 +363,22 @@ const Login = ({ tabIndex }: InferGetServerSidePropsType<typeof getServerSidePro
               </>
             )}
           </div>
-          <Tabs selectedIndex={tabIndex} onTabSelected={onTabSelected}>
-            <DemoMeetingTab label="Start" />
-            <CustomConnectionTab label="Join" />
-          </Tabs>
+          {test ? (
+            <>
+              <Tabs selectedIndex={tabIndex} onTabSelected={onTabSelected}>
+                <AnonymouslyTab label="Anonymously" />
+                <CustomConnectionTab label="Join" />
+              </Tabs>
+            </>
+          ) : (
+            <>
+              <Tabs selectedIndex={tabIndex} onTabSelected={onTabSelected}>
+                <DemoMeetingTab label="Start" />
+                <CustomConnectionTab label="Join" />
+              </Tabs>
+            </>
+          )}
+
           <div className='flex flex-col w-full'>
             <div className="divider mt-0 mb-0 w-full"></div>
           </div>
