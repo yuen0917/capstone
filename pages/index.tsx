@@ -178,6 +178,7 @@ const Login = ({ tabIndex }: InferGetServerSidePropsType<typeof getServerSidePro
 
   function onTabSelected(index: number) {
     const tab = test === 1 ? index === 1 ? 'custom' : 'anonymously' : index === 1 ? 'custom' : 'demo';
+    // const tab = index === 1 ? 'custom' : 'demo';
     router.push({ query: { tab } });
   }
 
@@ -263,15 +264,15 @@ const Login = ({ tabIndex }: InferGetServerSidePropsType<typeof getServerSidePro
             </h1>
           </div>
           <div className=' flex'>
-            <h1 className='text-xl mr-2 bg-primary rounded-lg border-4 border-[#8692f9]'>Welcome</h1>
+            <h1 className='text-xl mr-2 bg-primary rounded-lg border-y-8 border-x-[16px] border-[#8692f9]'>Welcome</h1>
             {test ? (
               <>
-                <h1 className='text-xl border-4 border-transparent'>{inputString}</h1>
+                <h1 className='text-xl border-4 border-y-8 border-transparent'>{inputString}</h1>
               </>
             ) : (
               <>
-                <Image width="35" height="15" src={data?.user?.image!} alt={data?.user?.name!} />
-                <h1 className=' ml-2 text-xl border-4 border-transparent'>{data?.user?.name}</h1>
+                <Image width="40" height="40" src={data?.user?.image!} alt={data?.user?.name!} />
+                <h1 className=' ml-2 text-xl border-4 border-y-8 border-transparent'>{data?.user?.name}</h1>
               </>
             )}
           </div>
