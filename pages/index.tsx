@@ -76,7 +76,6 @@ function DemoMeetingTab({ label }: { label: string }) {
 }
 
 function AnonymouslyTab({ label }: { label: string }) {
-  const router = useRouter();
   return (
     <div className={styles.tabContent}>
       <p>You need to login in to start a streaming</p>
