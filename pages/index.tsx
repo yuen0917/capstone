@@ -177,7 +177,7 @@ const Login = ({ tabIndex }: InferGetServerSidePropsType<typeof getServerSidePro
   };
 
   function onTabSelected(index: number) {
-    const tab = index === 1 ? 'custom' : 'demo';
+    const tab = test === 1 ? index === 1 ? 'custom' : 'anonymously' : index === 1 ? 'custom' : 'demo';
     router.push({ query: { tab } });
   }
 
