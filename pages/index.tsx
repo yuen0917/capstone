@@ -239,6 +239,10 @@ const Login = ({ tabIndex }: InferGetServerSidePropsType<typeof getServerSidePro
         <a href="https://github.com/zyx1121/ntust.live">
           GitHub
         </a>
+        and his website{' '}
+        <a href="https://ntust.live">
+          ntust.live
+        </a>
         .
       </footer>
     </>
